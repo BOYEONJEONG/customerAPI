@@ -5,4 +5,28 @@
 	<select id="getCustomer" resultType="Customer"> 
 		SELECT * FROM customers; 
 	</select> 
+	
+	<insert id="addCustomer">
+		INSERT INTO
+			customers
+			(
+			first_name,
+			last_name,
+			phone,
+			address,
+			email,
+			city,
+			state
+			)
+		VALUES
+			(
+			#{first_name},
+			#{last_name},
+			#{phone},
+			#{address},
+			#{email},
+			#{city},
+			#{state}
+			);
+	</insert>
 </mapper>

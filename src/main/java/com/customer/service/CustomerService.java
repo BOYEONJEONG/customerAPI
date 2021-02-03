@@ -15,9 +15,23 @@ public class CustomerService {
 	public CustomerMapper mapper;
 	
 	public List<Customer> getCustomer(){
-		System.out.println("in service");
-		System.out.println("in service" + mapper.getCustomer());
-		
 		return mapper.getCustomer();
+	}
+	
+	public void addCustomer() {
+		
+		Customer customer = new Customer();
+		customer.setId(3);
+		customer.setFirst_name("boyeon");
+		customer.setLast_name("Jeong");
+		customer.setPhone("010-1234-1234");
+		customer.setEmail("email@email.com");
+		customer.setAddress("address123");
+		customer.setCity("city1234");
+		customer.setState("state123");
+		
+		mapper.addCustomer(customer);
+		
+		return;
 	}
 }

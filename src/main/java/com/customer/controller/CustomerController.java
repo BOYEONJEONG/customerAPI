@@ -18,10 +18,17 @@ public class CustomerController {
 	CustomerService CustomerService;
 
 	@ResponseBody
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public List<Customer> getCustomer(){
-		System.out.println("in controller");
 		List<Customer> customerList = CustomerService.getCustomer();
 		return customerList;
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "/add", method = RequestMethod.GET)
+	public void addCustomer(){
+		
+		CustomerService.addCustomer();
+		return;
 	}
 }
