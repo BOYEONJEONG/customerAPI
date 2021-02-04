@@ -3,12 +3,26 @@
 
 <mapper namespace="com.customer.mapper.CustomerMapper"> 
 	<select id="getCustomer" resultType="Customer"> 
-		SELECT * FROM customers; 
+		SELECT 
+			* 
+		FROM 
+			customers
+		WHERE
+			is_actived=true; 
 	</select> 
 	
 	<select id="detailCustomer" parameterType="int" resultType="Customer"> 
-		SELECT * FROM customers WHERE id = #{index}; 
+		SELECT * FROM customers WHERE id = #{id}; 
 	</select> 
+	
+	<delete id="deleteCustomer" parameterType="int">
+		UPDATE 
+			customers
+		SET
+			is_actived=false
+		WHERE
+			id=#{id};
+	</delete>
 	
 	<insert id="addCustomer">
 		INSERT INTO
@@ -33,4 +47,19 @@
 			#{state}
 			);
 	</insert>
+	
+	<update id="updateCustomer">
+		UPDATE 
+			customers 
+		SET
+			first_name=#{first_name},
+			last_name=#{last_name},
+			phone=#{phone},
+			address=#{address},
+			email=#{email},
+			city=#{city},
+			state=#{state}
+		WHERE
+			id=#{id};
+	</update>
 </mapper>
