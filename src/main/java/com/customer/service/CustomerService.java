@@ -18,6 +18,10 @@ public class CustomerService {
 		return mapper.getCustomer();
 	}
 	
+	public Customer detailCustomer(int index) {
+		return mapper.detailCustomer(index);
+	}
+	
 	public void addCustomer(Customer customer) {
 		mapper.addCustomer(customer);
 		return;

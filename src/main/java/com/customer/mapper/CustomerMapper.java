@@ -11,5 +11,6 @@ import com.customer.model.Customer;
 @Mapper
 public interface CustomerMapper {
 	List<Customer> getCustomer();
+	Customer detailCustomer(int index);
 	void addCustomer(Customer customer);
 }

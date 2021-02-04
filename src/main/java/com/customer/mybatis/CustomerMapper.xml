@@ -6,6 +6,10 @@
 		SELECT * FROM customers; 
 	</select> 
 	
+	<select id="detailCustomer" parameterType="int" resultType="Customer"> 
+		SELECT * FROM customers WHERE id = #{index}; 
+	</select> 
+	
 	<insert id="addCustomer">
 		INSERT INTO
 			customers

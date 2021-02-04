@@ -2,6 +2,8 @@ package com.customer.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -30,9 +32,9 @@ public class CustomerController {
 
 	@ResponseBody
 	@RequestMapping(value = "/detail", method = RequestMethod.GET, produces = "application/json")
-	public Customer detailCustomer(String index){
-//		System.out.println(index);
-		return null;
+	public Customer detailCustomer(HttpServletRequest request){
+		Customer customer = CustomerService.detailCustomer(Integer.parseInt(request.getParameter("id")));
+		return customer;
 	}
 
 	@ResponseBody
