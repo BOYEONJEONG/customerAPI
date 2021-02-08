@@ -44,7 +44,7 @@ public class CustomerController {
 	@RequestMapping(value = "/delete", method = RequestMethod.PUT, produces = "application/json")
 	public void deleteCustomer(@RequestBody DeleteCustomerRequest request){
 		//RequestBody(POST, PUT, PATCH + DELETE, GET)
-		CustomerService.deleteCustomer(request.getId());
+		CustomerService.deleteCustomer(request.getIds());
 		return ;
 	}
 

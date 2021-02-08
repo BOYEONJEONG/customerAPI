@@ -23,8 +23,11 @@ public class CustomerService {
 		return mapper.detailCustomer(id);
 	}
 	
-	public void deleteCustomer(int id) {
-		mapper.deleteCustomer(id);
+	public void deleteCustomer(List<Integer> ids) {
+//		for(int id : ids) {
+//			mapper.deleteCustomer(id);
+//		}
+		mapper.deleteCustomer(ids);
 		return ;
 	}
 	

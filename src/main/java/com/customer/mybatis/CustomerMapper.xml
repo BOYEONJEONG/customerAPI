@@ -8,20 +8,23 @@
 		FROM 
 			customers
 		WHERE
-			is_actived=true; 
+			is_actived=true
 	</select> 
 	
 	<select id="detailCustomer" parameterType="int" resultType="Customer"> 
-		SELECT * FROM customers WHERE id = #{id}; 
+		SELECT * FROM customers WHERE id = #{id}
 	</select> 
 	
-	<delete id="deleteCustomer" parameterType="int">
+	<delete id="deleteCustomer" parameterType="java.util.List">
 		UPDATE 
 			customers
 		SET
 			is_actived=false
 		WHERE
-			id=#{id};
+			id in 
+			<foreach collection="ids" item="item" index="index" separator="," open="(" close=")">
+            	#{item}
+            </foreach>
 	</delete>
 	
 	<insert id="addCustomer">
@@ -45,7 +48,7 @@
 			#{email},
 			#{city},
 			#{state}
-			);
+			)
 	</insert>
 	
 	<update id="updateCustomer">
@@ -60,6 +63,6 @@
 			city=#{city},
 			state=#{state}
 		WHERE
-			id=#{id};
+			id=#{id}
 	</update>
 </mapper>

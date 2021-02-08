@@ -14,6 +14,6 @@ public interface CustomerMapper {
 	List<Customer> getCustomer();
 	Customer detailCustomer(int id);
 	void addCustomer(Customer customer);
-	void deleteCustomer(int id);
+	void deleteCustomer(List<Integer> ids);
 	void updateCustomer(UpdateCustomerReqeuset request);
 }

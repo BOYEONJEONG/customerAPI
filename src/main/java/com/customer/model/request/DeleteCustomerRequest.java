@@ -1,13 +1,15 @@
 package com.customer.model.request;
 
-public class DeleteCustomerRequest {
-	private int id;
+import java.util.List;
 
-	public int getId() {
-		return id;
+public class DeleteCustomerRequest {
+	private List<Integer> ids;
+
+	public List<Integer> getIds() {
+		return ids;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIds(List<Integer> ids) {
+		this.ids = ids;
 	}
 }
